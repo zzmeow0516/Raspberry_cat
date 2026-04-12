@@ -1,0 +1,6 @@
+# 树莓派推理依赖（无需 torch/ultralytics）
+# picamera2 和 gpiozero 通常 RPi OS 已预装
+# 安装命令: pip install -r rpi/requirements.txt
+onnxruntime
+numpy
+Pillow

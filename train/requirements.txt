@@ -1,0 +1,8 @@
+# PyTorch CPU 版（Windows + Intel GPU 无需 CUDA）
+# 安装命令: pip install -r requirements.txt
+torch
+torchvision
+Pillow
+scikit-learn
+matplotlib
+onnx
