@@ -2,10 +2,13 @@ dataset，图片放在本地windows电脑跑模型，跑完的数据传回rasp.
 
 Windows 电脑上（如果还没装 ultralytics）：
 pip install ultralytics
-python train/train_classifier.py
-python train/export_yolo_onnx.py
+python train/train_classifier.py #添加照片后重新训练
 
-会在 models/ 下生成 yolov8n.onnx，把它复制到树莓派的 Cat/models/
+#会在 models/ 下生成 yolov8n.onnx，把它复制到树莓派的 Cat/models/
+python train/export_yolo_onnx.py #这个只需要执行一次，模型固定不变
+
+#在 models/ 下生成 cat_classifier.onnx 和 cat_classifier.onnx.data， 这两个需要一起上传到rasp
+python train/export_onnx.py     #这个每次重新训练后需要重新跑
 
 rasp:
 cd work/Cat/
