@@ -2,6 +2,7 @@ dataset，图片放在本地windows电脑跑模型，跑完的数据传回rasp.
 
 Windows 电脑上（如果还没装 ultralytics）：
 pip install ultralytics
+python train/train_classifier.py
 python train/export_yolo_onnx.py
 
 会在 models/ 下生成 yolov8n.onnx，把它复制到树莓派的 Cat/models/
