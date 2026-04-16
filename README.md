@@ -8,7 +8,11 @@ python train/export_yolo_onnx.py
 
 rasp:
 cd work/Cat/
+
+sudo pigpiod
+
 source  venv/bin/activate
+
 python rpi/main.py
 
 -------------------------
