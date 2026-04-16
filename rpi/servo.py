@@ -92,7 +92,8 @@ class ServoController:
 
         self.open_food()
         time.sleep(1)  # 猫粮落下时间
-        self.close_food()
+        # 暂时不需要反转
+        # self.close_food()
         self._last_trigger_time = time.time()
         print(f"[舵机] 喂食完成，冷却 {COOLDOWN_SECONDS}s")
         return True

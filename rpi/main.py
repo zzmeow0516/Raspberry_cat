@@ -38,6 +38,7 @@ def init_camera():
     cam.configure(cam.create_preview_configuration(
         main={"size": CAMERA_RESOLUTION, "format": "RGB888"},
     ))
+    controls={"FrameRate": 50}
     cam.start()
     time.sleep(2)
     print(f"[摄像头] 已启动 ({CAMERA_RESOLUTION[0]}x{CAMERA_RESOLUTION[1]})")
