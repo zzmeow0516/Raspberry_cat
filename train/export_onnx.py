@@ -99,7 +99,7 @@ def main():
     except ImportError:
         print("[提示] 安装 onnxruntime 可验证输出一致性: pip install onnxruntime")
 
-    print("\n下一步: 将 models/cat_classifier.onnx 复制到树莓派的 Cat/models/ 目录下")
+    print("\n下一步: 将 models/cat_classifier.onnx 复制到树莓派的 cat/models/ 目录下")
 
 
 if __name__ == "__main__":

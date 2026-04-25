@@ -1,7 +1,7 @@
 """
-SG90 360度连续旋转舵机控制
+MG996R 180度连续旋转舵机控制
 
-360度舵机通过 PWM 脉宽控制旋转方向和速度:
+180度舵机通过 PWM 脉宽控制旋转方向和速度:
 - 脉宽 ~1.5ms: 停止
 - 脉宽 >1.5ms: 正转（开启猫粮）
 - 脉宽 <1.5ms: 反转（关闭猫粮）
@@ -64,10 +64,12 @@ class ServoController:
         return max(0, remaining)
 
     def open_food(self):
-        """正转 — 打开猫粮"""
-        print(f"[舵机] 正转 {SERVO_OPEN_DURATION}s — 打开猫粮")
+        """转到 60° — 打开猫粮"""
+        print(f"[舵机] 转到 60° — 打开猫粮")
         if self.servo:
-            self.servo.max()  # 正转最大速度
+            # gpiozero Servo: value=-1 对应 0°, value=0 对应 90°, value=1 对应 180°
+            # 60° 对应 value = (60/90) - 1 = -0.3
+            self.servo.value = -0.3
         time.sleep(SERVO_OPEN_DURATION)
         self.stop()
 
@@ -92,8 +94,7 @@ class ServoController:
 
         self.open_food()
         time.sleep(1)  # 猫粮落下时间
-        # 暂时不需要反转
-        # self.close_food()
+        self.close_food()
         self._last_trigger_time = time.time()
         print(f"[舵机] 喂食完成，冷却 {COOLDOWN_SECONDS}s")
         return True

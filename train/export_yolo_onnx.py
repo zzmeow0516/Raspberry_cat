@@ -31,7 +31,7 @@ def main():
         shutil.move(src, OUTPUT_PATH)
 
     print(f"已导出: {OUTPUT_PATH}")
-    print("下一步: 将 models/yolov8n.onnx 复制到树莓派的 Cat/models/ 目录")
+    print("下一步: 将 models/yolov8n.onnx 复制到树莓派的 cat/models/ 目录")
 
 
 if __name__ == "__main__":

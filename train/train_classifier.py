@@ -2,7 +2,7 @@
 MobileNetV2 迁移学习 — 猫咪分类器训练
 
 用法（在 Windows 本地电脑运行）:
-    cd Cat
+    cd cat
     pip install -r train/requirements.txt
     python train/train_classifier.py
 """
